@@ -1,0 +1,9 @@
+#N canvas 164 207 438 194 10;
+#X obj 27 125 flib.util.asci2char;
+#X text 60 19 asci2char /// converts asci number value to corresponding
+character;
+#X floatatom 27 102 5 0 0 0 - - -;
+#X obj 27 146 print;
+#X text 171 108 INLETS \; 1st = asci character number in (32-125;
+#X connect 0 0 3 0;
+#X connect 2 0 0 0;

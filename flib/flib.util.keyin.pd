@@ -1,0 +1,66 @@
+#N canvas 459 72 360 310 10;
+#X obj 37 62 key;
+#X obj 76 143 spigot;
+#X obj 37 83 sel 27;
+#X obj 140 123 tgl 13 0 \$0-bogus \$0-bogus-i empty 0 -6 0 8 -233017
+-1 -1 0 1;
+#X obj 140 53 loadbang;
+#X obj 76 173 outlet;
+#X obj 140 173 outlet;
+#X obj 140 73 \$1;
+#X text 34 21 [tastin] - Gate for keyboard input;
+#X text 258 146 Outlets;
+#X text 258 46 Arguments;
+#X text 258 66 - State (0 / 1);
+#X text 258 166 - key number;
+#X text 258 186 - state;
+#X text 258 216 Key control;
+#X text 258 236 - Esc on / off;
+#N canvas 0 50 448 418 license 0;
+#X text 8 47 All rights reserved.;
+#X text 8 227 The names of its contributors may not be used to endorse
+or promote products derived from this software without specific prior
+written permission.;
+#X text 8 87 Redistribution and use in source and binary forms \, with
+or without modification \, are permitted provided that the following
+conditions are met:;
+#X text 8 127 Redistributions of source code must retain the above
+copyright notice \, this list of conditions and the following disclaimer.
+;
+#X text 8 297 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND
+CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES \, INCLUDING
+\, BUT NOT LIMITED TO \, THE IMPLIED WARRANTIES OF MERCHANTABILITY
+AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL
+THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT \, INDIRECT
+\, INCIDENTAL \, SPECIAL \, EXEMPLARY \, OR CONSEQUENTIAL DAMAGES (INCLUDING
+\, BUT NOT LIMITED TO \, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES
+;
+#X text 8 167 Redistributions in binary form must reproduce the above
+copyright notice \, this list of conditions and the following disclaimer
+in the documentation and/or other materials provided with the distribution.
+;
+#X text 8 7 Copyright 2006 \, João Pais;
+#X text 8 27 jmmmpais@gmail.com;
+#X restore 37 290 pd license;
+#X obj 102 123 cnv 13 37 13 empty \$0-label 0 4 8 0 12 -195568 -1 0
+;
+#X obj 40 243 s \$0-label;
+#X msg 40 223 label \$1;
+#X obj 150 93 inlet;
+#X text 258 96 Inlets;
+#X text 258 116 - toggle switch;
+#X obj 40 203 makefilename %d;
+#X text 34 272 (C) 2006-2015 João Pais - jmmmpais@gmail.com;
+#X connect 0 0 2 0;
+#X connect 1 0 5 0;
+#X connect 2 0 3 0;
+#X connect 2 1 1 0;
+#X connect 2 1 23 0;
+#X connect 3 0 1 1;
+#X connect 3 0 6 0;
+#X connect 4 0 7 0;
+#X connect 7 0 3 0;
+#X connect 19 0 18 0;
+#X connect 20 0 3 0;
+#X connect 23 0 19 0;
+#X coords 0 -1 1 1 54 28 1 100 110;

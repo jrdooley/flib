@@ -1,0 +1,122 @@
+#N canvas 32 120 1183 607 10;
+#N canvas 2 68 467 468 gen_interface 0;
+#X floatatom 106 118 5 1 1000 1 range - -;
+#X floatatom 106 138 5 0 500 1 offset - -;
+#X floatatom 106 158 5 1 1000 1 max_step - -;
+#X floatatom 106 178 5 1 1000 1 min_step - -;
+#X floatatom 106 198 5 0 3 1 direction - -;
+#X floatatom 106 218 5 0 100 1 repeat - -;
+#X obj 255 409 outlet;
+#X msg 255 182 offset \$1;
+#X msg 263 211 max \$1;
+#X msg 275 239 min \$1;
+#X msg 286 271 direction \$1;
+#X msg 299 297 repeat \$1;
+#X floatatom 106 238 5 0 1000 1 set - -;
+#X msg 311 328 set \$1;
+#X obj 106 62 route float offset max min direction repeat set;
+#X obj 106 9 inlet;
+#X connect 0 0 6 0;
+#X connect 1 0 7 0;
+#X connect 2 0 8 0;
+#X connect 3 0 9 0;
+#X connect 4 0 10 0;
+#X connect 5 0 11 0;
+#X connect 7 0 6 0;
+#X connect 8 0 6 0;
+#X connect 9 0 6 0;
+#X connect 10 0 6 0;
+#X connect 11 0 6 0;
+#X connect 12 0 13 0;
+#X connect 13 0 6 0;
+#X connect 14 0 0 0;
+#X connect 14 1 1 0;
+#X connect 14 2 2 0;
+#X connect 14 3 3 0;
+#X connect 14 4 4 0;
+#X connect 14 5 5 0;
+#X connect 14 6 12 0;
+#X connect 15 0 14 0;
+#X coords 0 -1 1 1 63 160 1 100 100;
+#X restore 28 40 pd gen_interface;
+#X floatatom 201 146 5 0 0 1 offset_range - -;
+#X floatatom 186 126 5 0 0 1 set_range - -;
+#X obj 170 80 bng 15 250 50 0 empty empty generate_a_number! 17 7 0
+10 -262144 -1 -1;
+#X floatatom 170 283 5 0 0 0 - - -;
+#X msg 179 103 set 3;
+#X text 226 99 <- sets u.generator value without outputting;
+#X floatatom 233 166 5 0 0 1 maximum_step_size - -;
+#X floatatom 264 186 5 0 0 1 minimum_step_size - -;
+#X floatatom 296 206 5 0 3 1 direction_of_walk - -;
+#X floatatom 328 226 5 0 0 1 chance_a_value_will_repeat - -;
+#X text 168 323 \$1) range: sets range of values that can be produce
+;
+#X text 169 341 \$2) offset: offsets the values produce (just like
+adding to the result);
+#X text 169 372 \$3) maximum step size: the maximum number of steps
+a value can jump up or down from the current value;
+#X text 170 405 \$4) minimum step size: the minimum number of steps
+a value can jump up or down from the current value;
+#X text 171 440 \$5) direction of walk: 0 = random \, 1 = ascending
+\, 2 = descending \, 3 = up then down.;
+#X text 173 473 \$6) chance of repeat: chance in percentage (0-100)
+that a value will repeat;
+#X msg 688 178 list 10 50 90;
+#X obj 663 106 bng 15 250 50 0 empty empty generate 17 7 0 10 -262144
+-1 -1;
+#X text 805 243 \$1-\$9) specify up to 9 split points \, creating 10
+regions. Values must be in ascending order (0-100);
+#X msg 692 200 list 2 7 17 29 45 67 99;
+#X obj 663 287 print;
+#X floatatom 663 266 5 0 0 0 - - -;
+#X floatatom 683 146 5 0 100 1 incoming_numbers_are_evaluated_with_respect_to_the_specified_split_points
+- -;
+#X text 738 104 <- generates a random number between 0-100 and evaluates
+it with respect to the specified weighted regions;
+#X text 798 179 <- sending lists allows you to change the split points
+;
+#X text 730 278 <- outputs the region the random number falls into
+(0 upto 9--zero indexed);
+#X obj 170 261 flib.gen.drunk 20 0 3 2 1 0;
+#X obj 663 243 flib.gen.weighted 34 99;
+#X text 165 45 generator: random drunken walk;
+#X text 664 37 weighted: create weighted regions \, then evaluate an
+incoming number (0-100) or generate and evaluate a random value;
+#X obj 667 396 bng 15 250 50 0 empty empty generate 17 7 0 10 -262144
+-1 -1;
+#X text 742 394 <- generates a random number between 0 and n-1;
+#X floatatom 754 494 5 0 0 1 URN_RANGE - -;
+#X msg 682 421 clear;
+#X msg 694 468 seed \$1;
+#X floatatom 694 446 5 0 0 0 - - -;
+#X obj 667 517 flib.gen.urn 10;
+#X floatatom 667 538 5 0 0 0 - - -;
+#X obj 754 537 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 775 536 <- bangs once all numbers have been generated;
+#X text 662 359 urn: generates random numbers without repetition;
+#X text 775 516 < \$1 = range;
+#X connect 0 0 27 0;
+#X connect 1 0 27 1;
+#X connect 2 0 27 0;
+#X connect 3 0 27 0;
+#X connect 5 0 27 0;
+#X connect 7 0 27 2;
+#X connect 8 0 27 3;
+#X connect 9 0 27 4;
+#X connect 10 0 27 5;
+#X connect 17 0 28 0;
+#X connect 18 0 28 0;
+#X connect 20 0 28 0;
+#X connect 22 0 21 0;
+#X connect 23 0 28 0;
+#X connect 27 0 4 0;
+#X connect 28 0 22 0;
+#X connect 31 0 37 0;
+#X connect 33 0 37 1;
+#X connect 34 0 37 0;
+#X connect 35 0 37 0;
+#X connect 36 0 35 0;
+#X connect 37 0 38 0;
+#X connect 37 1 39 0;

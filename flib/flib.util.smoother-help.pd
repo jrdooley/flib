@@ -1,0 +1,22 @@
+#N canvas 291 137 518 312 10;
+#X obj 22 222 flib.util.smoother 500 100 20;
+#X floatatom 22 48 5 0 0 0 - - -;
+#X floatatom 22 243 5 0 0 0 - - -;
+#X msg 37 103 up \$1;
+#X floatatom 37 82 5 0 0 0 - - -;
+#X text 222 194 ARGUMENTS \; \$1 = upwards smoothing time (ms) \; \$2
+= downwards smoothing time (ms) \; \$3 = moving average number of samples
+;
+#X floatatom 52 126 5 0 0 0 - - -;
+#X msg 52 147 down \$1;
+#X floatatom 73 167 5 0 0 0 - - -;
+#X msg 73 188 mavg \$1;
+#X text 96 8 smoother /// smooth the constant incoming values;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
+#X connect 3 0 0 0;
+#X connect 4 0 3 0;
+#X connect 6 0 7 0;
+#X connect 7 0 0 0;
+#X connect 8 0 9 0;
+#X connect 9 0 0 0;

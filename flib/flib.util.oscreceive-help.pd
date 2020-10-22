@@ -1,0 +1,21 @@
+#N canvas 277 109 588 310 10;
+#X text 123 11 oscsend /// osc message sending utility using netsend
+;
+#X text 286 130 ARGUMENTS \; \$1 = IP address \; \$2 = port number
+\; \$3 = Connect/Disconnect (1/0);
+#X floatatom 14 84 5 0 0 0 - - -;
+#X obj 14 104 oscformat test-address;
+#X text 286 86 INLETS \; 1st = (symbol) IP address \, (float) port
+number \; 2nd = Connect/Disconnect (1/0);
+#X obj 14 245 print;
+#X obj 14 224 flib.util.oscreceive 8888;
+#X obj 14 129 flib.util.oscsend 127.0.0.1 8888 1;
+#X text 122 33 oscreceive /// interface for receiving OSC messages
+using netreceive;
+#X text 286 216 INLETS \; 1st = (float) port number \; 2nd = Connect/Disconnect
+(1/0);
+#X text 286 260 ARGUMENTS \; \$1 = port number;
+#X connect 2 0 3 0;
+#X connect 3 0 7 0;
+#X connect 6 0 5 0;
+#X coords 0 310 1 309 250 16 0;

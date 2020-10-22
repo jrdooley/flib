@@ -1,0 +1,25 @@
+#N canvas 689 338 490 285 10;
+#X text 71 9 scaler /// MIDI value (0-127) scaler with exponential
+and offset function;
+#X obj 29 80 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X floatatom 26 120 5 0 0 0 - - -;
+#X obj 26 100 i;
+#X obj 26 217 flib.midi.scaler 1 10 5;
+#X floatatom 71 149 5 0 0 1 EXPONENT - -;
+#X floatatom 116 173 5 0 0 1 MULTIPLIER - -;
+#X floatatom 161 195 5 0 0 1 OFFSET - -;
+#X floatatom 26 238 5 0 0 1 FLOAT - -;
+#X floatatom 161 237 5 0 0 1 INTEGER - -;
+#X text 271 204 ARGUMENTS \; \$1 = exponential scaling \; \$2 = multiplier
+\; \$3 = offset;
+#X text 271 134 INLETS \; 1st = MIDI value in (0-127) \; 2nd = exponential
+scaling \; 3rd = multiplier \; 4th = offset;
+#X connect 1 0 3 0;
+#X connect 2 0 4 0;
+#X connect 3 0 2 0;
+#X connect 4 0 8 0;
+#X connect 4 1 9 0;
+#X connect 5 0 4 1;
+#X connect 6 0 4 2;
+#X connect 7 0 4 3;

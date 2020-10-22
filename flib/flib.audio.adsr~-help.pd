@@ -1,0 +1,32 @@
+#N canvas 585 285 514 429 10;
+#X obj 20 55 osc~ 440;
+#X obj 20 76 *~ 0.1;
+#X obj 20 369 *~;
+#X obj 79 208 flib.gui.adsr;
+#X obj 37 120 bng 15 250 50 0 empty empty CLICK_ME 17 7 0 10 -262144
+-1 -1;
+#X obj 37 140 t b b;
+#X obj 37 181 del 100;
+#X msg 37 202 0;
+#X msg 64 160 1;
+#X obj 20 400 dac~ 1 2;
+#X text 63 7 adsr~ /// ADSR ENVELOPE GENERATOR;
+#X text 124 80 INLETS \; 1st = trigger: (float) amplitude / 'off' message
+instantly stops envelope and resets amplitude to zero. 2nd = attack
+(ms) \; 3rd = decay (ms) \; 4th = sustain (0-1) \; 5th = release (ms)
+;
+#X text 231 339 ARGUMENTS \; \$1 = attack (ms) \; \$2 = decay (ms)
+\; \$3 = sustan (0-1) \; \$4 = release (ms);
+#X obj 35 346 flib.audio.adsr~ 1 100 0.5 500;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 9 0;
+#X connect 2 0 9 1;
+#X connect 3 0 13 0;
+#X connect 4 0 5 0;
+#X connect 5 0 6 0;
+#X connect 5 1 8 0;
+#X connect 6 0 7 0;
+#X connect 7 0 13 0;
+#X connect 8 0 13 0;
+#X connect 13 0 2 1;

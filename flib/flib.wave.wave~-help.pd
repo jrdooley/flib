@@ -1,0 +1,23 @@
+#N canvas 521 180 571 254 10;
+#X obj 25 172 flib.wave.wave~;
+#X text 163 6 wave~ /// multiple waveform selector;
+#X floatatom 25 51 5 0 0 1 FREQUENCY - -;
+#X obj 25 71 sig~;
+#X obj 25 193 *~ 0.1;
+#X obj 25 224 dac~ 1 2;
+#X floatatom 54 119 5 0 0 0 - - -;
+#X obj 57 99 hsl 128 15 0 5 0 0 empty empty WAVEFORM_SELECT_(0-5) 2
+8 0 10 -262144 -1 -1 0 1;
+#X obj 83 140 bng 15 250 50 0 empty empty PHASE_RESET 17 7 0 10 -262144
+-1 -1;
+#X text 206 143 INLETS \; 1st = wave frequency \; 2nd = wave shape
+(0 = sine \, 1 = triangle \, 2 = square \, 3 = upsawtooth \, 5 = impulse)
+\; 3rd = wave phase reset \; 4th = ???...;
+#X connect 0 0 4 0;
+#X connect 2 0 3 0;
+#X connect 3 0 0 0;
+#X connect 4 0 5 0;
+#X connect 4 0 5 1;
+#X connect 6 0 0 1;
+#X connect 7 0 6 0;
+#X connect 8 0 0 2;

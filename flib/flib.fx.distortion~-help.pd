@@ -1,0 +1,13 @@
+#N canvas 0 22 450 300 12;
+#X obj 92 148 flib.fx.distortion~;
+#X obj 225 115 hsl 128 15 0 1 0 0 empty empty DISTORTION 2 8 0 10 -262144
+-1 -1 1700 1;
+#X obj 92 172 *~ 0.1;
+#X obj 92 226 dac~;
+#X obj 92 86 osc~ 440;
+#X text 163 21 tan based distortion;
+#X connect 0 0 2 0;
+#X connect 1 0 0 1;
+#X connect 2 0 3 0;
+#X connect 2 0 3 1;
+#X connect 4 0 0 0;

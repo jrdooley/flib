@@ -1,0 +1,12 @@
+#N canvas 257 311 263 170 10;
+#X obj 42 101 flib.util.onebang;
+#X obj 42 74 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 42 122 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 141 74 bng 15 250 50 0 empty empty RESET 17 7 0 10 -262144 -1
+-1;
+#X text 47 27 onebang /// onebang!!!;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
+#X connect 3 0 0 1;

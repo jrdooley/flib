@@ -1,0 +1,23 @@
+#N canvas 26 141 727 275 10;
+#X text 478 184 ARGUMENTS \; \$1 = frequency shift (Hz) \; \$2 = modulation
+rate (Hz) \; \$3 = modulation amount (0-1);
+#X obj 35 199 flib.fx.freqshift~ 400 1 100;
+#X text 478 94 INLETS \; 1st = audio signal to frequency shift \; 2nd
+= frequency shift (Hz) \; 3rd = modulation rate (Hz) \; 4th = modulation
+amount (0-1);
+#X obj 35 83 phasor~ 220;
+#X obj 35 104 *~ 0.1;
+#X floatatom 90 127 5 0 0 1 FREQUENCY_SHIFT_AMOUNT_(Hz) - -;
+#X floatatom 146 147 5 0 0 1 FREQUENCY_SHIFT_MODULATION_(Hz) - -;
+#X floatatom 200 167 5 0 1 1 FREQUENCY_SHIFT_MODULATION_AMOUNT(0-1)
+- -;
+#X obj 35 250 dac~ 1 2;
+#X text 189 26 freqshift~ /// simple frequency shift with frequency
+modulation effect;
+#X connect 1 0 8 0;
+#X connect 1 0 8 1;
+#X connect 3 0 4 0;
+#X connect 4 0 1 0;
+#X connect 5 0 1 1;
+#X connect 6 0 1 2;
+#X connect 7 0 1 3;

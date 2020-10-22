@@ -1,0 +1,22 @@
+#N canvas 124 162 585 258 10;
+#X text 144 13 resonantband~ /// resonant band pass filter;
+#X obj 31 82 noise~;
+#X obj 31 103 *~ 0.1;
+#X floatatom 90 127 5 0 0 1 CENTRE_FREQUENCY_(Hz) - -;
+#X floatatom 149 147 5 0 0 1 Q/RESONANCE - -;
+#X obj 208 168 hradio 15 1 0 3 empty empty NORMALISATION 50 8 0 10
+-262144 -1 -1 0;
+#X obj 31 211 dac~ 1 2;
+#X text 367 84 INLETS \; 1st = audio signal \; 2nd = centre frequency
+(Hz) \; 3rd = Q ratio/filter resonance \; 4th = normalisation (0 \,
+1 \, 2);
+#X obj 31 190 flib.fx.resonantband~ 550 10 2;
+#X text 367 154 ARGUMENTS \; \$1 = centre frequency (Hz) \; \$2 = Q
+ratio/filter resonance \; \$3 = normalisation (0 \, 1 \, 2);
+#X connect 1 0 2 0;
+#X connect 2 0 8 0;
+#X connect 3 0 8 1;
+#X connect 4 0 8 2;
+#X connect 5 0 8 3;
+#X connect 8 0 6 0;
+#X connect 8 0 6 1;

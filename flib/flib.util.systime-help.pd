@@ -1,0 +1,4 @@
+#N canvas 255 93 319 112 10;
+#X text 73 14 systime /// Shows the system time;
+#X obj 110 68 flib.util.systime;
+#X coords 0 112 1 111 70 17 0;

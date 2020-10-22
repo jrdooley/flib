@@ -1,0 +1,29 @@
+#N canvas 659 216 586 339 10;
+#X obj 36 232 flib.audio.envelopefollower~;
+#X obj 36 76 noise~;
+#X text 42 16 envelopefollower~ /// signal enveloper follower with
+adjustable attack and release time;
+#X obj 201 207 tgl 15 0 empty empty ENVELOPE_FOLLOW/SIDECHAIN_(1/0)
+17 7 0 10 -262144 -1 -1 0 1;
+#X obj 162 185 hsl 128 15 0 1 0 0 empty empty 0-1_DEPTH 2 8 0 10 -262144
+-1 -1 12700 1;
+#X floatatom 77 142 5 0 0 1 ATTACK_TIME_(ms) - -;
+#X floatatom 118 163 5 0 0 1 RELEASE_TIME_(ms) - -;
+#X obj 36 253 env~;
+#X obj 36 274 dbtorms;
+#X floatatom 36 295 5 0 0 0 - - -;
+#X obj 36 119 *~;
+#X obj 51 96 osc~ 0.3;
+#X text 256 68 INLETS \; 1st = signal to analyse/follow \; 2nd = attack
+time (ms) \; 3rd = release time (ms) \; 4th = output depth/amount (0-1)
+\; 5th = envelope follow or sidechain (inverse envelope follow);
+#X connect 0 0 7 0;
+#X connect 1 0 10 0;
+#X connect 3 0 0 4;
+#X connect 4 0 0 3;
+#X connect 5 0 0 1;
+#X connect 6 0 0 2;
+#X connect 7 0 8 0;
+#X connect 8 0 9 0;
+#X connect 10 0 0 0;
+#X connect 11 0 10 1;

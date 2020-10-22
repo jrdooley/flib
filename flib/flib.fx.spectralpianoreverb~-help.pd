@@ -1,0 +1,16 @@
+#N canvas 4 84 437 231 10;
+#X text 38 17 pianoreverb~ /// FFT-based piano string reverberator
+;
+#X obj 18 54 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 18 74 dirac~;
+#X floatatom 183 106 5 1 20 1 REVERB_TIME_(s) - -;
+#X obj 18 152 dac~ 1 2;
+#X text 293 64 INLETS \; 1st = audio signal \; 2nd = reverb time (s)
+;
+#X obj 18 131 flib.fx.spectralpianoreverb~;
+#X connect 1 0 2 0;
+#X connect 2 0 6 0;
+#X connect 3 0 6 1;
+#X connect 6 0 4 0;
+#X connect 6 0 4 1;

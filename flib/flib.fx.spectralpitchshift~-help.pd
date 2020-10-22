@@ -1,0 +1,17 @@
+#N canvas 244 355 483 209 10;
+#X obj 22 140 flib.fx.spectralpitchshift~;
+#X floatatom 181 72 5 0 0 1 PITCH_SHIFT_(MIDI_cents) - -;
+#X obj 22 68 phasor~ 220;
+#X obj 22 89 *~ 0.1;
+#X obj 22 181 dac~ 1 2;
+#X msg 196 117 windowSize \$1;
+#X floatatom 196 97 5 0 0 1 powers_of_2_only_(512_1024_2048_etc) -
+-;
+#X text 95 5 spectralpitchshift~ /// FFT-based pitchshift effect;
+#X connect 0 0 4 0;
+#X connect 0 0 4 1;
+#X connect 1 0 0 1;
+#X connect 2 0 3 0;
+#X connect 3 0 0 0;
+#X connect 5 0 0 1;
+#X connect 6 0 5 0;

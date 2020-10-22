@@ -1,0 +1,136 @@
+#N canvas 467 173 777 589 10;
+#X obj 36 158 *~ 0.3;
+#X obj 50 184 r~ \$0-fb;
+#X obj 55 233 delwrite~ \$0-a1 100;
+#X obj 36 259 delwrite~ \$0-a2 100;
+#X obj 384 158 clip -1 1;
+#X obj 384 180 * 0.4;
+#X obj 384 432 *~;
+#X obj 384 454 s~ \$0-fb;
+#X obj 198 158 * 5;
+#X obj 199 312 osc~;
+#X obj 199 334 *~;
+#X obj 199 356 +~;
+#X obj 199 378 vd~ \$0-a1;
+#X obj 199 413 *~ 1;
+#X obj 265 202 + 1;
+#X obj 265 313 osc~;
+#X obj 265 335 *~;
+#X obj 265 357 +~;
+#X obj 265 379 vd~ \$0-a2;
+#X obj 300 153 * 2;
+#X obj 36 206 +~;
+#X obj 199 519 outlet~;
+#X obj 36 79 inlet~;
+#X obj 301 199 lop~ 64;
+#X obj 198 228 sig~;
+#X obj 199 250 lop~ 64;
+#X obj 300 177 sig~;
+#X obj 265 225 sig~;
+#X obj 266 247 lop~ 64;
+#X obj 384 334 lop~ 64;
+#X obj 384 313 sig~;
+#X obj 403 101 loadbang;
+#X obj 384 67 inlet feedback;
+#X obj 198 69 inlet rate;
+#X obj 300 68 inlet depth;
+#X text 38 11 CHORUS - courtesy of Obiwannabe;
+#X text 38 26 \$1 = feedback \; \$2 = rate \; \$3 = depth;
+#N canvas 751 110 503 525 LICENCE 0;
+#X text 63 55 Attribution 4 International (CC BY 4.0) This is a human-readable
+summary of (and not a substitute for) the license. Disclaimer This
+license is acceptable for Free Cultural Works.;
+#X text 63 131 You are free to: Share - copy and redistribute the material
+in any medium or format.;
+#X text 63 181 Adapt - remix \, transform \, and build upon the material
+for any purpose \, even commercially.;
+#X text 63 231 The licensor cannot revoke these freedoms as long as
+you follow the license terms. Under the following terms:;
+#X text 63 281 Attribution - You must give appropriate credit \, provide
+a link to the license \, and indicate if changes were made. You may
+do so in any reasonable manner \, but not in any way that suggests
+the licensor endorses you or your use.;
+#X text 63 357 No additional restrictions - You may not apply legal
+terms or technological measures that legally restrict others from doing
+anything the license permits.;
+#X text 63 420 Notices: You do not have to comply with the license
+for elements of the material in the public domain or where your use
+is permitted by an applicable exception or limitation. No warranties
+are given. The license may not give you all of the permissions necessary
+for your intended use. For example \, other rights such as publicity
+\, privacy \, or moral rights may limit how you use the material.;
+#X text 64 19 J.R.Dooley \, 2013;
+#X restore 380 41 pd LICENCE;
+#X obj 214 135 \$1;
+#X obj 315 131 \$2;
+#X obj 403 135 \$3;
+#X obj 200 293 +~;
+#X obj 265 296 +~;
+#X obj 506 67 inlet random;
+#X obj 482 201 *~;
+#X obj 482 181 lop~;
+#X obj 482 161 noise~;
+#X obj 511 91 clip 0 1;
+#X obj 511 111 pow 2.7;
+#X obj 511 131 * 22050;
+#X obj 560 180 sig~;
+#X obj 560 200 lop~ 100;
+#X obj 482 221 env~;
+#X obj 482 241 dbtorms;
+#X floatatom 482 261 5 0 0 0 - - -;
+#X connect 0 0 20 0;
+#X connect 1 0 20 1;
+#X connect 4 0 5 0;
+#X connect 5 0 30 0;
+#X connect 6 0 7 0;
+#X connect 8 0 14 0;
+#X connect 8 0 24 0;
+#X connect 9 0 10 0;
+#X connect 10 0 11 0;
+#X connect 11 0 12 0;
+#X connect 12 0 13 0;
+#X connect 13 0 21 0;
+#X connect 13 0 6 1;
+#X connect 14 0 27 0;
+#X connect 15 0 16 0;
+#X connect 16 0 17 0;
+#X connect 17 0 18 0;
+#X connect 18 0 13 0;
+#X connect 19 0 26 0;
+#X connect 20 0 2 0;
+#X connect 20 0 3 0;
+#X connect 22 0 0 0;
+#X connect 23 0 16 1;
+#X connect 23 0 17 1;
+#X connect 23 0 10 1;
+#X connect 23 0 11 1;
+#X connect 24 0 25 0;
+#X connect 25 0 41 0;
+#X connect 26 0 23 0;
+#X connect 27 0 28 0;
+#X connect 28 0 42 0;
+#X connect 29 0 6 0;
+#X connect 30 0 29 0;
+#X connect 31 0 38 0;
+#X connect 31 0 39 0;
+#X connect 31 0 40 0;
+#X connect 32 0 4 0;
+#X connect 33 0 8 0;
+#X connect 34 0 19 0;
+#X connect 38 0 8 0;
+#X connect 39 0 19 0;
+#X connect 40 0 4 0;
+#X connect 41 0 9 0;
+#X connect 42 0 15 0;
+#X connect 43 0 47 0;
+#X connect 44 0 52 0;
+#X connect 45 0 44 0;
+#X connect 46 0 45 0;
+#X connect 47 0 48 0;
+#X connect 48 0 49 0;
+#X connect 49 0 45 1;
+#X connect 49 0 50 0;
+#X connect 50 0 51 0;
+#X connect 51 0 44 1;
+#X connect 52 0 53 0;
+#X connect 53 0 54 0;

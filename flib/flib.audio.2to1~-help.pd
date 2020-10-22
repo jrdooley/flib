@@ -1,0 +1,18 @@
+#N canvas 617 217 387 313 10;
+#X obj 24 122 *~ 0.1;
+#X obj 24 66 osc~ 440;
+#X obj 141 137 hsl 128 15 0 1 0 0 empty empty 0-1 2 8 0 10 -262144
+-1 -1 0 1;
+#X obj 24 163 flib.audio.2to1~;
+#X obj 24 244 dac~ 1 2;
+#X obj 84 122 *~ 0.1;
+#X obj 84 66 osc~ 550;
+#X text 12 13 2to1~ /// 2 in \, 1 out. Pans between two incoming signals
+and sends a mono signal out.;
+#X connect 0 0 3 0;
+#X connect 1 0 0 0;
+#X connect 2 0 3 2;
+#X connect 3 0 4 0;
+#X connect 3 0 4 1;
+#X connect 5 0 3 1;
+#X connect 6 0 5 0;

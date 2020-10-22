@@ -1,0 +1,138 @@
+#N canvas 585 285 417 318 10;
+#X obj 34 35 inlet;
+#X obj 34 276 outlet~;
+#N canvas 751 110 503 525 LICENCE 0;
+#X text 63 55 Attribution 4 International (CC BY 4.0) This is a human-readable
+summary of (and not a substitute for) the license. Disclaimer This
+license is acceptable for Free Cultural Works.;
+#X text 63 131 You are free to: Share - copy and redistribute the material
+in any medium or format.;
+#X text 63 181 Adapt - remix \, transform \, and build upon the material
+for any purpose \, even commercially.;
+#X text 63 231 The licensor cannot revoke these freedoms as long as
+you follow the license terms. Under the following terms:;
+#X text 63 281 Attribution - You must give appropriate credit \, provide
+a link to the license \, and indicate if changes were made. You may
+do so in any reasonable manner \, but not in any way that suggests
+the licensor endorses you or your use.;
+#X text 63 357 No additional restrictions - You may not apply legal
+terms or technological measures that legally restrict others from doing
+anything the license permits.;
+#X text 63 420 Notices: You do not have to comply with the license
+for elements of the material in the public domain or where your use
+is permitted by an applicable exception or limitation. No warranties
+are given. The license may not give you all of the permissions necessary
+for your intended use. For example \, other rights such as publicity
+\, privacy \, or moral rights may limit how you use the material.;
+#X text 64 19 J.R.Dooley \, 2013;
+#X restore 280 186 pd LICENCE;
+#X obj 83 34 inlet a;
+#X obj 143 35 inlet d;
+#X obj 207 35 inlet s;
+#X obj 274 35 inlet r;
+#X text 106 10 ADSR ENVELOPE GENERATOR;
+#X text 256 220 \$1 = attack time(ms) \; \$2 = decay time(ms) \; \$3
+= sustain \; \$4 = release time(ms);
+#X obj 207 157 clip 0 1;
+#N canvas 611 310 629 568 adsr---------- 0;
+#X obj 22 14 inlet trigger;
+#X obj 227 17 inlet attack;
+#X obj 323 17 inlet decay;
+#X obj 509 17 inlet release;
+#X obj 410 17 inlet sustain;
+#X obj 145 404 pack f f;
+#X obj 129 275 del 10;
+#X msg 137 251 stop;
+#X obj 392 366 * 1;
+#X obj 146 527 outlet~;
+#X obj 410 343 f 1;
+#X obj 82 123 t b b;
+#X obj 22 37 route off float;
+#X obj 490 381 spigot 1;
+#X msg 549 315 1;
+#X msg 94 210 0;
+#X obj 305 366 f 1;
+#X obj 209 215 f 1;
+#X msg 22 209 0 5;
+#X msg 54 209 stop;
+#X obj 146 475 line~;
+#X obj 22 170 t b b b;
+#X obj 227 39 change;
+#X obj 323 39 change;
+#X obj 410 39 change;
+#X obj 509 39 change;
+#X obj 82 92 sel 0;
+#X obj 490 333 f;
+#X msg 490 355 0 \$1;
+#X obj 305 394 pack f f;
+#X msg 305 416 \$2 \$1;
+#X msg 145 426 \$1 \$2;
+#X obj 129 123 t b f b f b b;
+#X obj 175 251 + 1;
+#X connect 0 0 12 0;
+#X connect 1 0 22 0;
+#X connect 2 0 23 0;
+#X connect 3 0 25 0;
+#X connect 4 0 24 0;
+#X connect 5 0 31 0;
+#X connect 6 0 16 0;
+#X connect 7 0 6 0;
+#X connect 8 0 29 1;
+#X connect 10 0 8 1;
+#X connect 11 0 27 0;
+#X connect 11 1 7 0;
+#X connect 12 0 21 0;
+#X connect 12 1 26 0;
+#X connect 13 0 20 0;
+#X connect 14 0 13 1;
+#X connect 15 0 13 1;
+#X connect 16 0 29 0;
+#X connect 17 0 5 1;
+#X connect 17 0 33 0;
+#X connect 18 0 20 0;
+#X connect 19 0 20 0;
+#X connect 20 0 9 0;
+#X connect 21 0 18 0;
+#X connect 21 1 15 0;
+#X connect 21 1 19 0;
+#X connect 21 2 7 0;
+#X connect 22 0 17 1;
+#X connect 23 0 16 1;
+#X connect 24 0 10 0;
+#X connect 25 0 27 1;
+#X connect 26 0 11 0;
+#X connect 26 1 32 0;
+#X connect 27 0 28 0;
+#X connect 28 0 13 0;
+#X connect 29 0 30 0;
+#X connect 30 0 20 0;
+#X connect 31 0 20 0;
+#X connect 32 0 6 0;
+#X connect 32 1 5 0;
+#X connect 32 2 17 0;
+#X connect 32 3 8 0;
+#X connect 32 4 14 0;
+#X connect 32 5 7 0;
+#X connect 33 0 6 1;
+#X restore 34 192 pd adsr----------;
+#X obj 83 156 max 1;
+#X obj 143 157 max 1;
+#X obj 274 157 max 1;
+#X obj 34 73 route list;
+#X obj 34 99 unpack f f f f;
+#X connect 0 0 14 0;
+#X connect 3 0 11 0;
+#X connect 4 0 12 0;
+#X connect 5 0 9 0;
+#X connect 6 0 13 0;
+#X connect 9 0 10 3;
+#X connect 10 0 1 0;
+#X connect 11 0 10 1;
+#X connect 12 0 10 2;
+#X connect 13 0 10 4;
+#X connect 14 0 15 0;
+#X connect 14 1 10 0;
+#X connect 15 0 11 0;
+#X connect 15 1 12 0;
+#X connect 15 2 9 0;
+#X connect 15 3 13 0;

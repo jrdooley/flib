@@ -1,0 +1,20 @@
+#N canvas 276 147 366 309 10;
+#X obj 26 225 dac~ 1;
+#X obj 85 225 dac~ 2;
+#X obj 89 124 hsl 128 15 0 1 0 0 empty empty 0-1 2 8 0 10 -262144 -1
+-1 0 1;
+#X obj 26 191 *~;
+#X obj 85 191 *~;
+#X obj 26 84 osc~ 440;
+#X obj 26 105 *~ 0.1;
+#X text 19 24 crossfade~ /// cosine law cross fader;
+#X obj 86 150 flib.audio.crossfade~ 0;
+#X text 239 150 ARGUMENTS \; \$1 = initial value;
+#X connect 2 0 8 0;
+#X connect 3 0 0 0;
+#X connect 4 0 1 0;
+#X connect 5 0 6 0;
+#X connect 6 0 3 0;
+#X connect 6 0 4 0;
+#X connect 8 0 3 1;
+#X connect 8 1 4 1;

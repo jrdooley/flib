@@ -1,0 +1,8 @@
+#N canvas 2 58 367 153 10;
+#X obj 23 90 flib.util.log;
+#X text 16 16 log /// logarithmic scaling for values between 0 and
+1;
+#X floatatom 23 58 5 0 1 0 - - -;
+#X floatatom 23 121 5 0 0 0 - - -;
+#X connect 0 0 3 0;
+#X connect 2 0 0 0;

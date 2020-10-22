@@ -1,0 +1,16 @@
+#N canvas 161 338 541 221 10;
+#X obj 36 144 flib.fx.saturation~;
+#X text 124 15 saturation~ /// saturation/waveshaping effect;
+#X text 332 95 INLETS \; 1st = audio signal \; 2nd = input gain (0-1)
+\; 3rd = saturation amount (0-1);
+#X obj 36 59 osc~ 440;
+#X obj 36 80 *~ 0.1;
+#X obj 36 175 dac~ 1 2;
+#X floatatom 91 99 5 0 1 1 INPUT_GAIN_(0-1) - -;
+#X floatatom 147 119 5 0 1 1 SATURATION_AMOUNT_(0-1) - -;
+#X connect 0 0 5 0;
+#X connect 0 0 5 1;
+#X connect 3 0 4 0;
+#X connect 4 0 0 0;
+#X connect 6 0 0 1;
+#X connect 7 0 0 2;

@@ -1,0 +1,9 @@
+#N canvas 0 22 450 300 12;
+#X obj 135 65 ctlin;
+#X floatatom 104 136 5 0 0 1 MIDI_cc - -;
+#X floatatom 104 117 5 0 0 1 MIDI_value - -;
+#X floatatom 104 155 5 0 0 1 MIDI_channel - -;
+#X connect 0 0 2 0;
+#X connect 0 1 1 0;
+#X connect 0 2 3 0;
+#X coords 0 -1 1 1 130 75 1 100 100;

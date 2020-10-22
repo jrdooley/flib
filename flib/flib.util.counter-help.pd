@@ -1,0 +1,17 @@
+#N canvas 444 457 545 185 10;
+#X text 132 13 counter /// simple recursive counter;
+#X obj 44 61 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X floatatom 56 82 5 0 0 0 - - -;
+#X floatatom 43 154 5 0 0 0 - - -;
+#X obj 44 133 flib.util.counter 10;
+#X text 189 65 INLETS \; 1st = bang steps through the counter \, float
+changes the current count value \, reset resets the counter \; 2nd
+= count range;
+#X msg 65 102 reset;
+#X text 189 115 ARGUMENTS \; \$1 = count range;
+#X connect 1 0 4 0;
+#X connect 2 0 4 0;
+#X connect 4 0 3 0;
+#X connect 6 0 4 0;
+#X coords 0 0 1 1 40 60 0;

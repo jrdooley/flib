@@ -1,0 +1,100 @@
+#N canvas 106 213 631 621 10;
+#N canvas 749 115 503 525 LICENCE 0;
+#X text 63 55 Attribution 4 International (CC BY 4.0) This is a human-readable
+summary of (and not a substitute for) the license. Disclaimer This
+license is acceptable for Free Cultural Works.;
+#X text 63 131 You are free to: Share - copy and redistribute the material
+in any medium or format.;
+#X text 63 181 Adapt - remix \, transform \, and build upon the material
+for any purpose \, even commercially.;
+#X text 63 231 The licensor cannot revoke these freedoms as long as
+you follow the license terms. Under the following terms:;
+#X text 63 281 Attribution - You must give appropriate credit \, provide
+a link to the license \, and indicate if changes were made. You may
+do so in any reasonable manner \, but not in any way that suggests
+the licensor endorses you or your use.;
+#X text 63 357 No additional restrictions - You may not apply legal
+terms or technological measures that legally restrict others from doing
+anything the license permits.;
+#X text 63 420 Notices: You do not have to comply with the license
+for elements of the material in the public domain or where your use
+is permitted by an applicable exception or limitation. No warranties
+are given. The license may not give you all of the permissions necessary
+for your intended use. For example \, other rights such as publicity
+\, privacy \, or moral rights may limit how you use the material.;
+#X text 64 19 J.R.Dooley \, 2013;
+#X restore 393 178 pd LICENCE;
+#X obj 29 599 outlet~;
+#X text 268 8 lfo;
+#X obj 29 469 *~;
+#X obj 30 566 +~;
+#X obj 28 179 sig~;
+#X obj 48 404 f;
+#X obj 29 32 inlet rate;
+#X obj 111 32 inlet amount;
+#X obj 207 32 inlet waveform;
+#X obj 29 113 s \$0-rate;
+#X obj 28 154 r \$0-rate;
+#X obj 111 113 s \$0-depth;
+#X obj 48 362 r \$0-depth;
+#X obj 29 90 \$1;
+#X obj 111 90 \$2;
+#X obj 207 90 \$3;
+#X obj 223 55 loadbang;
+#X obj 55 199 r \$0-waveform;
+#X obj 207 133 s \$0-waveform;
+#X obj 207 112 clip 0 3;
+#X text 337 126 \$1 = lfo speed (Hz) \; \$2 = lfo depth (0-1) \; \$3
+= waveform (sine \, tri \, saw \, square);
+#X msg 48 425 \$1 10;
+#X obj 48 447 line~;
+#X msg 67 523 \$1 10;
+#X obj 67 545 line~;
+#X obj 67 502 -;
+#X msg 67 480 1 \$1;
+#X obj 322 32 inlet phase;
+#X obj 322 54 s \$0-phase;
+#X obj 82 221 r \$0-phase;
+#X obj 419 30 inlet random;
+#X obj 419 52 clip 0 1;
+#X obj 419 74 i;
+#X obj 419 96 s \$0-random;
+#X obj 109 243 r \$0-random;
+#X msg 123 289 rand-freq \$1;
+#X obj 123 267 r \$0-rate;
+#X obj 48 383 * 0.5;
+#X obj 28 337 flib.wave.wave~;
+#X connect 3 0 4 0;
+#X connect 4 0 1 0;
+#X connect 5 0 39 0;
+#X connect 6 0 22 0;
+#X connect 6 0 27 0;
+#X connect 7 0 14 0;
+#X connect 8 0 15 0;
+#X connect 9 0 16 0;
+#X connect 11 0 5 0;
+#X connect 13 0 38 0;
+#X connect 14 0 10 0;
+#X connect 15 0 12 0;
+#X connect 16 0 20 0;
+#X connect 17 0 15 0;
+#X connect 17 0 14 0;
+#X connect 17 0 16 0;
+#X connect 18 0 39 1;
+#X connect 20 0 19 0;
+#X connect 22 0 23 0;
+#X connect 23 0 3 1;
+#X connect 24 0 25 0;
+#X connect 25 0 4 1;
+#X connect 26 0 24 0;
+#X connect 27 0 26 0;
+#X connect 28 0 29 0;
+#X connect 30 0 39 2;
+#X connect 31 0 32 0;
+#X connect 32 0 33 0;
+#X connect 33 0 34 0;
+#X connect 35 0 39 3;
+#X connect 36 0 39 3;
+#X connect 37 0 36 0;
+#X connect 38 0 6 0;
+#X connect 39 0 3 0;

@@ -1,0 +1,95 @@
+#N canvas 30 186 571 640 10;
+#X obj 141 233 rpole~;
+#X obj 141 208 rzero_rev~;
+#X obj 141 282 rpole~;
+#X obj 141 257 rzero_rev~;
+#X obj 141 330 rpole~;
+#X obj 141 305 rzero_rev~;
+#X obj 141 379 rpole~;
+#X obj 141 354 rzero_rev~;
+#X obj 126 409 +~;
+#X obj 243 159 expr~ 1 - 0.03 - 0.6*abs($v1-0.5)*abs($v1-0.5);
+#X obj 47 68 inlet~;
+#X obj 45 589 outlet~;
+#X obj 242 68 inlet modulationFrequency;
+#X obj 242 92 sig~ \$1;
+#X obj 242 114 lop~ 64;
+#X obj 243 136 phasor~;
+#X text 46 10 PHASOR;
+#X text 48 29 \$1 = rate (Hz);
+#N canvas 751 110 503 525 LICENCE 0;
+#X text 63 55 Attribution 4 International (CC BY 4.0) This is a human-readable
+summary of (and not a substitute for) the license. Disclaimer This
+license is acceptable for Free Cultural Works.;
+#X text 63 131 You are free to: Share - copy and redistribute the material
+in any medium or format.;
+#X text 63 181 Adapt - remix \, transform \, and build upon the material
+for any purpose \, even commercially.;
+#X text 63 231 The licensor cannot revoke these freedoms as long as
+you follow the license terms. Under the following terms:;
+#X text 63 281 Attribution - You must give appropriate credit \, provide
+a link to the license \, and indicate if changes were made. You may
+do so in any reasonable manner \, but not in any way that suggests
+the licensor endorses you or your use.;
+#X text 63 357 No additional restrictions - You may not apply legal
+terms or technological measures that legally restrict others from doing
+anything the license permits.;
+#X text 63 420 Notices: You do not have to comply with the license
+for elements of the material in the public domain or where your use
+is permitted by an applicable exception or limitation. No warranties
+are given. The license may not give you all of the permissions necessary
+for your intended use. For example \, other rights such as publicity
+\, privacy \, or moral rights may limit how you use the material.;
+#X text 64 19 J.R.Dooley \, 2013;
+#X restore 230 29 pd LICENCE;
+#X obj 433 63 inlet depth(0-1);
+#X obj 433 84 clip 0 1;
+#X obj 141 529 cos~;
+#X obj 60 528 cos~;
+#X obj 210 416 f;
+#X obj 210 396 * 0.25;
+#X obj 228 354 loadbang;
+#X obj 228 376 \$1;
+#X obj 141 507 +~ 0.75;
+#X msg 210 437 \$1 10;
+#X obj 210 459 vline~;
+#X obj 45 553 *~;
+#X obj 126 550 *~;
+#X connect 0 0 3 0;
+#X connect 1 0 0 0;
+#X connect 2 0 5 0;
+#X connect 3 0 2 0;
+#X connect 4 0 7 0;
+#X connect 5 0 4 0;
+#X connect 6 0 8 1;
+#X connect 7 0 6 0;
+#X connect 8 0 31 0;
+#X connect 9 0 1 1;
+#X connect 9 0 0 1;
+#X connect 9 0 3 1;
+#X connect 9 0 2 1;
+#X connect 9 0 5 1;
+#X connect 9 0 4 1;
+#X connect 9 0 7 1;
+#X connect 9 0 6 1;
+#X connect 10 0 8 0;
+#X connect 10 0 1 0;
+#X connect 10 0 30 0;
+#X connect 12 0 13 0;
+#X connect 13 0 14 0;
+#X connect 14 0 15 0;
+#X connect 15 0 9 0;
+#X connect 19 0 20 0;
+#X connect 20 0 24 0;
+#X connect 21 0 31 1;
+#X connect 22 0 30 1;
+#X connect 23 0 28 0;
+#X connect 24 0 23 0;
+#X connect 25 0 26 0;
+#X connect 26 0 24 0;
+#X connect 27 0 21 0;
+#X connect 28 0 29 0;
+#X connect 29 0 27 0;
+#X connect 29 0 22 0;
+#X connect 30 0 11 0;
+#X connect 31 0 11 0;

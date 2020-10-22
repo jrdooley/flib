@@ -1,0 +1,29 @@
+#N canvas 614 55 427 357 10;
+#X obj 195 140 tgl 13 0 empty empty empty 0 -6 0 8 -233017 -1 -1 1
+1;
+#X obj 232 313 outlet;
+#X obj 90 50 inlet nachricht;
+#X obj 195 50 inlet an-aus;
+#X text 26 10 oscreceive /// interface for receiving OSC messages using
+netreceive;
+#X obj 232 246 netreceive -u -b;
+#X msg 232 226 listen \$1;
+#X obj 195 183 \$1;
+#X obj 195 204 sel 0;
+#X obj 232 267 oscparse;
+#X obj 232 288 list trim;
+#X obj 195 157 sel 1;
+#X obj 90 78 route float;
+#X connect 0 0 11 0;
+#X connect 2 0 12 0;
+#X connect 3 0 0 0;
+#X connect 5 0 9 0;
+#X connect 6 0 5 0;
+#X connect 7 0 8 0;
+#X connect 8 1 6 0;
+#X connect 9 0 10 0;
+#X connect 10 0 1 0;
+#X connect 11 0 7 0;
+#X connect 11 1 6 0;
+#X connect 12 0 7 1;
+#X coords 0 -1 1 1 200 16 1 10 138;

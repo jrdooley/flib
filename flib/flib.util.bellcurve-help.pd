@@ -1,0 +1,10 @@
+#N canvas 2 58 450 203 10;
+#X obj 73 110 flib.util.bellcurve;
+#X obj 76 72 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 12700 1;
+#X obj 76 152 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X text 59 18 bellcurve /// sinusoidal bell curve transfer function
+;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;

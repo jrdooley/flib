@@ -1,0 +1,18 @@
+#N canvas 1 58 450 300 10;
+#X obj 52 103 unpack;
+#X text 109 102 outlet:1=y \, 2=x;
+#X obj 298 150 r holdx;
+#X obj 105 147 r holdy;
+#X obj 52 173 spigot 1;
+#X obj 245 174 spigot 1;
+#X obj 52 234 outlet y;
+#X obj 245 236 outlet x;
+#X obj 52 27 inlet;
+#X text 191 27 unpacks xy pad values;
+#X connect 0 0 4 0;
+#X connect 0 1 5 0;
+#X connect 2 0 5 1;
+#X connect 3 0 4 1;
+#X connect 4 0 6 0;
+#X connect 5 0 7 0;
+#X connect 8 0 0 0;

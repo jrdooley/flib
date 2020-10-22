@@ -1,0 +1,58 @@
+#N canvas 213 0 488 855 10;
+#X text 158 -44 flib /// Pd utilities;
+#X obj 18 -1 flib.audio.1to2~;
+#X obj 18 22 flib.audio.2to1~;
+#X obj 18 45 flib.audio.adsr~;
+#X obj 18 68 flib.audio.amp~;
+#X obj 18 91 flib.audio.crossfade~;
+#X obj 18 114 flib.audio.envelopefollower~;
+#X obj 18 137 flib.audio.matrix~;
+#X obj 18 397 flib.audio.peakenv~;
+#X obj 18 420 flib.audio.play~;
+#X obj 19 520 flib.fx.bitcrush~;
+#X obj 19 543 flib.fx.chorus~;
+#X obj 19 566 flib.fx.freqshift~;
+#X obj 19 589 flib.fx.phaser~;
+#X obj 19 758 flib.fx.spectralpianoreverb~;
+#X obj 19 612 flib.fx.resonantband~;
+#X obj 19 635 flib.fx.resonantlop~;
+#X obj 19 658 flib.fx.saturation~;
+#X obj 19 681 flib.fx.spectralfreeze~;
+#X obj 19 781 flib.fx.spectralpitchshift~;
+#X obj 19 804 flib.fx.vdelay~;
+#X obj 19 857 flib.gen.drunk;
+#X obj 19 880 flib.gen.urn;
+#X obj 19 903 flib.gen.weighted;
+#X obj 19 956 flib.gui.adsr;
+#X obj 19 1063 flib.gui.rgbcolour;
+#X obj 19 1148 flib.midi.scaler;
+#X obj 19 1171 flib.util.asci2char;
+#X obj 19 1224 flib.util.bellcurve;
+#X obj 20 1247 flib.util.counter;
+#X obj 20 1270 flib.util.keyin;
+#X obj 20 1305 flib.util.linedrive;
+#X obj 20 1328 flib.util.listextract;
+#X obj 20 1351 flib.util.log;
+#X obj 20 1374 flib.util.onebang;
+#X obj 20 1397 flib.util.oscreceive;
+#X obj 20 1420 flib.util.oscsend;
+#X obj 20 1443 flib.util.smoother;
+#X obj 20 1466 flib.util.switch;
+#X obj 20 1489 flib.util.systime;
+#X obj 20 1528 flib.util.taptempo;
+#X obj 20 1605 flib.util.timer;
+#X obj 20 1650 flib.util.transfunc;
+#X obj 20 1703 flib.wave.wave~;
+#X obj 20 1726 flib.wave.lfo~;
+#X text 18 -22 AUDIO ---------------------------------------------------
+;
+#X text 18 496 FX ------------------------------------------------------
+;
+#X text 19 833 GENERATIVE ----------------------------------------------
+;
+#X text 20 934 GUI -----------------------------------------------------
+;
+#X text 21 1201 UTILITIES ------------------------------------------------
+;
+#X text 22 1677 WAVE GENERATORS ----------------------------------------
+;

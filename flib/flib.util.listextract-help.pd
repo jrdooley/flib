@@ -1,0 +1,13 @@
+#N canvas 354 194 512 201 10;
+#X obj 28 134 flib.util.listextract;
+#X msg 151 111 1 2 3 dog cat haggis;
+#X floatatom 28 95 5 0 0 0 - - -;
+#X obj 28 165 print;
+#X text 53 8 listextract /// extract an item from a stored list;
+#X text 297 94 INLETS \; 1st = list index item to extract \; 2nd =
+list to extact item from;
+#X obj 151 91 loadbang;
+#X connect 0 0 3 0;
+#X connect 1 0 0 1;
+#X connect 2 0 0 0;
+#X connect 6 0 1 0;

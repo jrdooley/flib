@@ -1,0 +1,16 @@
+#N canvas 420 111 467 249 10;
+#X obj 34 146 flib.fx.bitcrush~;
+#X obj 136 116 hsl 128 15 0 1 0 0 empty empty CRUSH_AMOUNT_(0-1) -2
+-8 0 10 -262144 -1 -1 0 1;
+#X text 38 15 bitcrush~ /// reduce the fidelity of an audio signal
+;
+#X obj 34 97 *~ 0.1;
+#X obj 34 187 dac~ 1 2;
+#X text 289 95 INLETS \; 1st = signal to crush \; 2nd = crush amount
+(0-127);
+#X obj 34 76 phasor~ 1000;
+#X connect 0 0 4 0;
+#X connect 0 0 4 1;
+#X connect 1 0 0 1;
+#X connect 3 0 0 0;
+#X connect 6 0 3 0;

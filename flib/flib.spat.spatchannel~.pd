@@ -1,0 +1,21 @@
+#N canvas 990 578 450 300 10;
+#X obj 59 162 *~;
+#X obj 75 119 sig~;
+#X obj 75 141 lop~ 100;
+#X obj 60 54 r~ \$1-signal;
+#X text 292 43 \$1 = \$0 \; \$2 = channel number \; \$3 = catch~ receiv
+;
+#X obj 194 179 switch~;
+#X floatatom 194 159 5 0 0 0 - - -;
+#X obj 194 115 r \$1-total-channels;
+#X obj 58 213 throw~ \$1-\$2;
+#X obj 75 96 r \$1-pan-\$2;
+#X obj 194 137 >= \$2;
+#X connect 0 0 8 0;
+#X connect 1 0 2 0;
+#X connect 2 0 0 1;
+#X connect 3 0 0 0;
+#X connect 6 0 5 0;
+#X connect 7 0 10 0;
+#X connect 9 0 1 0;
+#X connect 10 0 6 0;

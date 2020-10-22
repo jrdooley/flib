@@ -1,0 +1,60 @@
+#N canvas 530 339 457 577 10;
+#X obj 30 533 outlet;
+#N canvas 751 110 503 525 LICENCE 0;
+#X text 63 55 Attribution 4 International (CC BY 4.0) This is a human-readable
+summary of (and not a substitute for) the license. Disclaimer This
+license is acceptable for Free Cultural Works.;
+#X text 63 131 You are free to: Share - copy and redistribute the material
+in any medium or format.;
+#X text 63 181 Adapt - remix \, transform \, and build upon the material
+for any purpose \, even commercially.;
+#X text 63 231 The licensor cannot revoke these freedoms as long as
+you follow the license terms. Under the following terms:;
+#X text 63 281 Attribution - You must give appropriate credit \, provide
+a link to the license \, and indicate if changes were made. You may
+do so in any reasonable manner \, but not in any way that suggests
+the licensor endorses you or your use.;
+#X text 63 357 No additional restrictions - You may not apply legal
+terms or technological measures that legally restrict others from doing
+anything the license permits.;
+#X text 63 420 Notices: You do not have to comply with the license
+for elements of the material in the public domain or where your use
+is permitted by an applicable exception or limitation. No warranties
+are given. The license may not give you all of the permissions necessary
+for your intended use. For example \, other rights such as publicity
+\, privacy \, or moral rights may limit how you use the material.;
+#X text 64 19 J.R.Dooley \, 2013;
+#X restore 173 19 pd LICENCE;
+#X obj 49 211 loadbang;
+#X obj 49 304 loadbang;
+#X obj 49 351 -;
+#X obj 31 374 *;
+#X msg 49 233 1;
+#X obj 31 277 *;
+#X obj 49 255 / 127;
+#X floatatom 103 118 5 0 0 0 - #0-gui #0-from-gui;
+#X text 31 42 receives MIDI CC messages sent from 'ccin' abstraction
+\; \$1 = cc or n \$2 = cc or note number \; \$3 = either f or i \;
+\$4 = max \; \$5 = min \;;
+#X text 34 9 mmr;
+#X obj 31 447 s \$0-gui;
+#X obj 49 329 pack \$4 \$3;
+#X obj 31 397 + \$3;
+#X obj 31 423 \$2;
+#X obj 30 507 change;
+#X obj 30 483 r \$0-from-gui;
+#X obj 31 170 r APCmini-n-\$1;
+#X connect 2 0 6 0;
+#X connect 3 0 13 0;
+#X connect 4 0 5 1;
+#X connect 5 0 14 0;
+#X connect 6 0 8 0;
+#X connect 7 0 5 0;
+#X connect 8 0 7 1;
+#X connect 13 0 4 0;
+#X connect 14 0 15 0;
+#X connect 15 0 12 0;
+#X connect 16 0 0 0;
+#X connect 17 0 16 0;
+#X connect 18 0 7 0;
+#X coords 0 -1 1 1 85 35 1 100 100;

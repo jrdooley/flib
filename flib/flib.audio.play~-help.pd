@@ -1,0 +1,28 @@
+#N canvas 400 135 452 470 10;
+#X obj 52 328 flib.audio.play~;
+#X msg 52 64 loadfile <file_name.wav>;
+#X msg 68 114 play-pause \$1;
+#X obj 68 94 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
+;
+#X msg 86 146 stop bang;
+#X obj 104 178 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 104 198 loop \$1;
+#X floatatom 114 233 5 0 0 0 - - -;
+#X msg 114 253 playback-speed \$1;
+#X msg 123 283 speed-reset bang;
+#X text 48 16 play~ /// simple stereo wav file playback with speed
+control;
+#X obj 52 430 dac~ 1 2;
+#X connect 0 0 11 0;
+#X connect 0 1 11 1;
+#X connect 1 0 0 0;
+#X connect 2 0 0 0;
+#X connect 3 0 2 0;
+#X connect 4 0 0 0;
+#X connect 5 0 6 0;
+#X connect 6 0 0 0;
+#X connect 7 0 8 0;
+#X connect 8 0 0 0;
+#X connect 9 0 0 0;
+#X coords 0 470 1 469 250 70 0;

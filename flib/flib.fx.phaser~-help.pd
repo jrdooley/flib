@@ -1,0 +1,19 @@
+#N canvas 3 63 465 265 10;
+#X text 112 20 phaser~ /// simple mono phaser effect;
+#X obj 27 70 phasor~ 220;
+#X obj 27 91 *~ 0.1;
+#X floatatom 88 132 5 0 22050 1 RATE_(Hz) - -;
+#X obj 153 150 hsl 128 15 0 1 0 0 empty empty DEPTH_(0-1) 2 8 0 10
+-262144 -1 -1 0 1;
+#X obj 27 206 dac~ 1 2;
+#X text 305 107 INLETS \; 1st = audio signal \; 2nd = phaser rate (Hz)
+\; 3rd = phaser depth (0-1);
+#X text 305 167 ARGUMENTS \; \$1 = phaser rate (Hz) \; \$2 = phaser
+depth (0-1);
+#X obj 27 175 flib.fx.phaser~ 2 0.5;
+#X connect 1 0 2 0;
+#X connect 2 0 8 0;
+#X connect 3 0 8 1;
+#X connect 4 0 8 2;
+#X connect 8 0 5 0;
+#X connect 8 0 5 1;

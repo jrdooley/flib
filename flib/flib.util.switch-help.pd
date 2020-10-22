@@ -1,0 +1,15 @@
+#N canvas 261 338 533 183 10;
+#X obj 20 120 flib.util.switch;
+#X text 64 10 switch /// conveniently select between two different
+outlets;
+#X floatatom 20 94 5 0 0 0 - - -;
+#X floatatom 20 141 5 0 0 0 - - -;
+#X floatatom 113 140 5 0 0 0 - - -;
+#X obj 113 100 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 162 97 INLETS \; 1st = number/symbol/list to send to either
+outlet 1 or 2 \; 2nd = choose which outlet is active (0-1);
+#X connect 0 0 3 0;
+#X connect 0 1 4 0;
+#X connect 2 0 0 0;
+#X connect 5 0 0 1;

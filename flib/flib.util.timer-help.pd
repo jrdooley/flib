@@ -1,0 +1,10 @@
+#N canvas 222 359 352 146 10;
+#X obj 60 110 flib.util.timer;
+#X text 42 10 timer /// Chronometer with display in seconds;
+#X obj 60 76 tgl 15 0 empty empty ON_OFF 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 126 77 61;
+#X text 158 77 <- set time;
+#X connect 2 0 0 0;
+#X connect 3 0 0 1;
+#X coords 0 146 1 145 73 20 0;

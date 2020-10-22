@@ -1,0 +1,52 @@
+#N struct 1011_knob_struct float px float py float cx float cy float
+pthck float innerc float bgcol float dialcol float pointercol float
+dialsize;
+#N canvas 335 74 953 653 12;
+#X obj 246 290 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X text 93 338 1st inlet: values from the numberbox (hidden behind
+the knob), f 63;
+#X text 93 358 2nd inlet: send messages to the abstraction \, like
+color parameters or [init( to reinitialize, f 93;
+#X text 93 388 1st outlet: messages to the numberbox \, like size \,
+sensitivity \, saving with patch \, reset value, f 95;
+#X text 474 62 adjust the colors of the knob;
+#X msg 236 96 size \$1;
+#X msg 168 96 sens \$1;
+#X obj 168 71 nbx 5 14 50 500 0 1 empty empty empty 0 -8 0 10 -262144
+-1 -1 132 256;
+#X obj 236 72 nbx 5 14 25 120 0 1 empty empty empty 0 -8 0 10 -262144
+-1 -1 50 256;
+#X msg 333 58 dialcolor 99 \, pointercolor 9 \, bgcolor 321, f 19
+;
+#X obj 333 32 loadbang;
+#X msg 298 255 reset 130;
+#X text 420 162 adjust output range;
+#X text 354 189 set exponent for nonlinear output;
+#X msg 287 162 min 100 \, max 150;
+#X msg 288 188 exp 0.5;
+#X text 169 17 set mouse response and size, f 14;
+#X text 93 408 2nd outlet: output values, f 93;
+#X text 376 254 set value to reset;
+#X obj 184 197 nbx 2 42 0 100 0 1 empty empty empty 0 -8 0 10 -262144
+-1 -1 0 256;
+#X obj 354 118 del 200;
+#X text 266 214 <===== doubleclick to reset specified value (default
+is 0 (or min value));
+#X text 411 118 (i use this delayed loadbang \, to hide the numberbox
+on startup);
+#X obj 183 197 flib.gui.knob;
+#X connect 5 0 23 1;
+#X connect 6 0 23 1;
+#X connect 7 0 6 0;
+#X connect 8 0 5 0;
+#X connect 9 0 23 1;
+#X connect 10 0 9 0;
+#X connect 10 0 20 0;
+#X connect 11 0 23 1;
+#X connect 14 0 23 1;
+#X connect 15 0 23 1;
+#X connect 19 0 23 0;
+#X connect 20 0 23 1;
+#X connect 23 0 19 0;
+#X connect 23 1 0 0;

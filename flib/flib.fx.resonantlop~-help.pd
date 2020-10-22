@@ -1,0 +1,18 @@
+#N canvas 121 407 515 266 10;
+#X obj 21 62 noise~;
+#X obj 21 83 *~ 0.1;
+#X floatatom 100 127 5 0 0 1 CENTRE_FREQUENCY_(Hz) - -;
+#X floatatom 180 147 5 0 0 1 Q/RESONANCE - -;
+#X obj 21 211 dac~ 1 2;
+#X obj 21 170 flib.fx.resonantlop~ 550 10;
+#X text 143 11 resonantlop~ /// resonant low-pass filter;
+#X text 289 91 INLETS \; 1st = audio signal \; 2nd = cutoff frequency
+(Hz) \; 3rd = Q ratio/filter resonance \;;
+#X text 289 161 ARGUMENTS \; \$1 = cutoff frequency (Hz) \; \$2 = Q
+ratio/filter resonance \;;
+#X connect 0 0 1 0;
+#X connect 1 0 5 0;
+#X connect 2 0 5 1;
+#X connect 3 0 5 2;
+#X connect 5 0 4 0;
+#X connect 5 0 4 1;

@@ -1,0 +1,139 @@
+#N canvas 225 215 553 275 10;
+#X obj 101 119 cnv 15 248 50 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 102 244 outlet~;
+#X obj 103 124 bng 15 250 50 0 \$0-file-load empty load_file 17 7 0
+10 -262144 -1 -1;
+#X obj 178 124 tgl 15 0 \$0-play \$0-playIn play/pause 17 7 0 10 -262144
+-1 -1 0 1;
+#X obj 308 124 tgl 15 0 \$0-loop empty loop 17 7 0 10 -262144 -1 -1
+0 1;
+#X obj 262 124 bng 15 250 50 0 \$0-stop empty stop 17 7 0 10 -262144
+-1 -1;
+#X obj 213 243 outlet~;
+#X text 206 2 SIMPLE FILE PLAYBACK DEVICE;
+#N canvas 751 110 503 525 LICENCE 0;
+#X text 63 55 Attribution 4 International (CC BY 4.0) This is a human-readable
+summary of (and not a substitute for) the license. Disclaimer This
+license is acceptable for Free Cultural Works.;
+#X text 63 131 You are free to: Share - copy and redistribute the material
+in any medium or format.;
+#X text 63 181 Adapt - remix \, transform \, and build upon the material
+for any purpose \, even commercially.;
+#X text 63 231 The licensor cannot revoke these freedoms as long as
+you follow the license terms. Under the following terms:;
+#X text 63 281 Attribution - You must give appropriate credit \, provide
+a link to the license \, and indicate if changes were made. You may
+do so in any reasonable manner \, but not in any way that suggests
+the licensor endorses you or your use.;
+#X text 63 357 No additional restrictions - You may not apply legal
+terms or technological measures that legally restrict others from doing
+anything the license permits.;
+#X text 63 420 Notices: You do not have to comply with the license
+for elements of the material in the public domain or where your use
+is permitted by an applicable exception or limitation. No warranties
+are given. The license may not give you all of the permissions necessary
+for your intended use. For example \, other rights such as publicity
+\, privacy \, or moral rights may limit how you use the material.;
+#X text 64 19 J.R.Dooley \, 2013;
+#X restore 464 44 pd LICENCE;
+#X obj 113 149 hsl 128 15 0.001 2 0 0 \$0-playback-speed empty playback_speed
+4 8 0 10 -262144 -1 -1 6347 1;
+#X obj 383 91 loadbang;
+#X msg 383 113 1;
+#X obj 103 45 route loadfile play-pause stop loop playback-speed speed-reset
+;
+#X obj 103 17 inlet;
+#X obj 255 149 bng 15 250 50 0 empty empty speed_reset 17 7 0 10 -262144
+-1 -1;
+#N canvas 0 51 281 271 FILE 0;
+#X obj 23 135 soundfiler;
+#X obj 23 83 pack s \$0;
+#X obj 23 58 openpanel;
+#X obj 23 187 table \$0-this-l;
+#X obj 24 211 table \$0-this-r;
+#X obj 23 160 s \$0-fileLength;
+#X msg 23 109 read -resize \$1 \$2-this-l \$2-this-r;
+#X obj 23 30 r \$0-file-load;
+#X connect 0 0 5 0;
+#X connect 1 0 6 0;
+#X connect 2 0 1 0;
+#X connect 6 0 0 0;
+#X connect 7 0 2 0;
+#X restore 102 190 pd FILE LOAD_______;
+#N canvas 0 45 506 576 TRIPES__________ 0;
+#X obj 196 537 outlet~;
+#X obj 195 165 spigot 0;
+#X obj 84 187 spigot 1;
+#X obj 129 166 == 0;
+#X msg 116 236 0;
+#X obj 196 318 rpole~ 1;
+#X obj 195 292 *~;
+#X msg 71 269 set 0;
+#X obj 195 237 sig~;
+#X obj 237 267 sig~ 1;
+#X obj 71 42 t b b;
+#X msg 98 63 0;
+#X obj 266 347 env~;
+#X obj 266 369 dbtorms;
+#X obj 266 414 >=;
+#X obj 284 391 r \$0-fileLength;
+#X obj 84 211 t b b;
+#X obj 266 436 sel 1;
+#X obj 266 460 s \$0-endOfFile;
+#X obj 84 118 r \$0-endOfFile;
+#X obj 195 118 r \$0-endOfFile;
+#X obj 129 140 r \$0-loop;
+#X obj 248 139 r \$0-loop;
+#X obj 71 17 r \$0-stop;
+#X obj 195 215 r \$0-play;
+#X obj 116 260 s \$0-playIn;
+#X obj 98 85 s \$0-playIn;
+#X obj 345 537 outlet~;
+#X obj 197 487 tabread4~ \$0-this-l;
+#X obj 344 487 tabread4~ \$0-this-r;
+#X obj 237 245 r \$0-playback-speed;
+#X connect 1 0 7 0;
+#X connect 2 0 16 0;
+#X connect 3 0 2 1;
+#X connect 4 0 25 0;
+#X connect 5 0 12 0;
+#X connect 5 0 28 0;
+#X connect 5 0 29 0;
+#X connect 6 0 5 0;
+#X connect 7 0 5 0;
+#X connect 8 0 6 0;
+#X connect 9 0 6 1;
+#X connect 10 0 7 0;
+#X connect 10 1 11 0;
+#X connect 11 0 26 0;
+#X connect 12 0 13 0;
+#X connect 13 0 14 0;
+#X connect 14 0 17 0;
+#X connect 15 0 14 1;
+#X connect 16 0 7 0;
+#X connect 16 1 4 0;
+#X connect 17 0 18 0;
+#X connect 19 0 2 0;
+#X connect 20 0 1 0;
+#X connect 21 0 3 0;
+#X connect 22 0 1 1;
+#X connect 23 0 10 0;
+#X connect 24 0 8 0;
+#X connect 28 0 0 0;
+#X connect 29 0 27 0;
+#X connect 30 0 9 0;
+#X restore 102 213 pd TRIPES__________;
+#X connect 10 0 11 0;
+#X connect 11 0 9 0;
+#X connect 12 0 2 0;
+#X connect 12 1 3 0;
+#X connect 12 2 5 0;
+#X connect 12 3 4 0;
+#X connect 12 4 9 0;
+#X connect 12 5 14 0;
+#X connect 13 0 12 0;
+#X connect 14 0 11 0;
+#X connect 16 0 1 0;
+#X connect 16 1 6 0;
+#X coords 0 -1 1 1 250 70 1 100 100;

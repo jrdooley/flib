@@ -1,0 +1,23 @@
+#N canvas 784 62 584 374 10;
+#X obj 24 87 osc~ 440;
+#X obj 24 108 *~ 0.1;
+#X obj 24 296 dac~ 1 2;
+#X obj 66 134 hsl 128 15 0 1 0 0 empty empty 0-1_AMPLITUDE 2 8 0 10
+-262144 -1 -1 0 1;
+#X text 246 83 INLETS \; 1st = audio signal to be amplified/attenuated
+\; 2nd = amplification amount (0-1) \; 3rd = ramp time to scale between
+amplitude changes \; 4th = scaling factor;
+#X text 43 17 amp~ /// convenient smoothed \, exponential amplitude
+control;
+#X text 159 229 ARGUMENTS \; 1st ramp time (ms) \; 2nd = scaling factor
+( >0);
+#X obj 24 225 flib.audio.amp~ 10 1;
+#X floatatom 102 175 5 0 0 1 RAMP_TIME_(ms) - -;
+#X floatatom 141 197 5 0 0 1 SCALING_FACTOR - -;
+#X connect 0 0 1 0;
+#X connect 1 0 7 0;
+#X connect 3 0 7 1;
+#X connect 7 0 2 0;
+#X connect 7 0 2 1;
+#X connect 8 0 7 2;
+#X connect 9 0 7 3;

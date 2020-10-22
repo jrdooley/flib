@@ -1,0 +1,5 @@
+#N canvas 335 144 372 171 10;
+#X obj 104 75 flib.gui.rgbcolour;
+#X text 27 18 rgbcolour /// GUI widget to select RGB colour values
+;
+#X coords 0 171 1 170 164 78 0;

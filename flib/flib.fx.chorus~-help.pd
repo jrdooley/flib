@@ -1,0 +1,30 @@
+#N canvas 157 191 503 336 10;
+#X obj 30 75 osc~ 440;
+#X obj 89 75 osc~ 550;
+#X obj 147 75 osc~ 660;
+#X obj 30 126 *~ 0.1;
+#X text 126 20 chorus~ /// simple mono chorus effect;
+#X obj 30 268 dac~ 1 2;
+#X obj 74 161 hsl 128 15 0 127 0 0 empty empty RATE_(Hz) 2 8 0 10 -262144
+-1 -1 3151 1;
+#X obj 115 181 hsl 128 15 0 1 0 0 empty empty DEPTH_(0-1) 2 8 0 10
+-262144 -1 -1 8300 1;
+#X obj 154 204 hsl 128 15 0 1 0 0 empty empty FEEDBACK_(-1-1) 2 8 0
+10 -262144 -1 -1 7058 1;
+#X text 294 100 INLETS \; 1st = audio signal to effect \; 2nd = chorus
+rate (Hz) \; 3rd = chorus depth (0-1) \; 4th = chorus feedback (-1-1)
+;
+#X text 295 179 ARGUMENTS \; \$1 = chorus rate (Hz) \; \$2 = chorus
+depth (0-1) \; \$3 = chorus feedback (-1-1);
+#X obj 30 227 flib.fx.chorus~ 2 1 1;
+#X floatatom 207 259 5 0 0 0 - - -;
+#X connect 0 0 3 0;
+#X connect 1 0 3 0;
+#X connect 2 0 3 0;
+#X connect 3 0 11 0;
+#X connect 6 0 11 1;
+#X connect 7 0 11 2;
+#X connect 8 0 11 3;
+#X connect 11 0 5 0;
+#X connect 11 0 5 1;
+#X connect 12 0 11 4;

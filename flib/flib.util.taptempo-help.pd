@@ -1,0 +1,4 @@
+#N canvas 1 79 288 161 10;
+#X obj 71 70 flib.util.taptempo;
+#X text 25 16 taptempo /// simple taptempo utility;
+#X coords 0 161 1 160 85 70 0;

@@ -1,0 +1,20 @@
+#N canvas 450 300 499 253 10;
+#X text 114 12 vdelay~ /// simple variable delay with feedback;
+#X obj 23 54 loadbang;
+#X obj 23 75 metro 500;
+#X obj 23 96 dirac~;
+#X floatatom 87 130 5 0 4000 1 DELAY_TIME_(ms) - -;
+#X floatatom 152 154 5 0 0.99 1 FEEDBACK_(0-0.99) - -;
+#X obj 23 214 dac~;
+#X text 306 92 INLETS \; 1st = audio signal \; 2nd = delay time (ms)
+\; 3rd = feedback amount (0-0.99);
+#X text 307 152 ARGUMENTS \; \$1 = delay time (ms) \; \$2 = feedback
+amount (0-0.99);
+#X obj 23 183 flib.fx.delay~ 100 0.5;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 9 0;
+#X connect 4 0 9 1;
+#X connect 5 0 9 2;
+#X connect 9 0 6 0;
+#X connect 9 0 6 1;
