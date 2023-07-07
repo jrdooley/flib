@@ -1,0 +1,27 @@
+#N canvas 63 88 648 406 12;
+#X text 132 20 rollingfreezer~ /// "live" Paul stretching using a rolling
+buffer;
+#X obj 79 71 flib.audio.play~;
+#X obj 79 247 flib.fx.rollingfreezer~;
+#X obj 79 309 flib.audio.output~ 1 2;
+#X floatatom 330 151 5 0 1 1 - - - 0;
+#X floatatom 423 166 5 -36 26 1 - - - 0;
+#X obj 528 188 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X msg 330 174 feedback \$1;
+#X msg 423 189 transpose \$1;
+#X msg 528 208 freeze \$1;
+#X obj 260 245 flib.fx.rollingfreezer~;
+#X connect 1 0 2 0;
+#X connect 1 1 10 0;
+#X connect 2 0 3 0;
+#X connect 4 0 7 0;
+#X connect 5 0 8 0;
+#X connect 6 0 9 0;
+#X connect 7 0 2 1;
+#X connect 7 0 10 1;
+#X connect 8 0 2 1;
+#X connect 8 0 10 1;
+#X connect 9 0 2 1;
+#X connect 9 0 10 1;
+#X connect 10 0 3 1;
